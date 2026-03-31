@@ -1,50 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Junior Kadooment Registration</title>
-    <style>
-        .hidden { display: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior Kadooment Band Registration | National Library Service of Barbados</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #333;
+    }
+
+    /* Banner */
+    header {
+        background: #003366;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    header img {
+        height: 60px;
+        border-radius: 8px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    header p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #003366;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 0.95rem;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        background: #003366;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: #0055a5;
+    }
+
+    .hidden { display: none; }
+
+    .section-images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .section-images img {
+        width: 32%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section-images img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    @media(max-width: 600px){
+        .section-images img {
+            width: 48%;
+        }
+    }
+
+    @media(max-width: 400px){
+        .section-images img {
+            width: 100%;
+        }
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.85rem;
+        color: #777;
+    }
+
+</style>
 </head>
+
 <body>
 
-<form id="form">
-
-<h3>General Info</h3>
-<input id="firstName" placeholder="First Name" required>
-<input id="lastName" placeholder="Last Name" required>
-
-<select id="gender" required>
-    <option value="">Gender</option>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-</select>
-
-<input id="address" placeholder="Address" required>
-<input id="contact" placeholder="Contact Number" required>
-<input id="parent" placeholder="Parent Name" required>
-
-<h3>Section</h3>
-<select id="section" required></select>
-
-<div id="measurements" class="hidden">
-    <h3>Measurements</h3>
-    <input id="chest" placeholder="Chest">
-    <input id="waist" placeholder="Waist">
-    <input id="height" placeholder="Height">
-
-    <div id="maleFields" class="hidden">
-        <input id="pants" placeholder="Pants Size">
+<header>
+    <img src="images/library-logo.png" alt="National Library Service Logo">
+    <div>
+        <h1>National Library Service of Barbados</h1>
+        <p>Junior Kadooment Band Registration</p>
     </div>
+</header>
 
-    <div id="femaleFields" class="hidden">
-        <input id="skirt" placeholder="Skirt Size">
-    </div>
+<div class="container">
+    <h2>Register Your Child</h2>
+
+    <form id="form">
+
+        <h3>General Information</h3>
+        <label>First Name</label>
+        <input id="firstName" required>
+        <label>Last Name</label>
+        <input id="lastName" required>
+
+        <label>Gender</label>
+        <select id="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Address</label>
+        <input id="address" required>
+
+        <label>Contact Number</label>
+        <input id="contact" required>
+
+        <label>Parent/Guardian Name</label>
+        <input id="parent" required>
+
+        <h3>Band Section</h3>
+        <label>Select Section</label>
+        <select id="section" required></select>
+
+        <div class="section-images">
+            <img id="masqueradersImg" src="images/masqueraders.jpg" alt="Masqueraders" class="hidden">
+            <img id="dancersImg" src="images/dancers.jpg" alt="Dancers" class="hidden">
+            <img id="drummersImg" src="images/drummers.jpg" alt="Drummers" class="hidden">
+        </div>
+
+        <div id="measurements" class="hidden">
+            <h3>Measurements</h3>
+            <label>Chest</label>
+            <input id="chest" type="number">
+
+            <label>Waist</label>
+            <input id="waist" type="number">
+
+            <label>Height</label>
+            <input id="height" type="number">
+
+            <div id="maleFields" class="hidden">
+                <label>Pants Size</label>
+                <input id="pants">
+            </div>
+
+            <div id="femaleFields" class="hidden">
+                <label>Skirt Size</label>
+                <input id="skirt">
+            </div>
+        </div>
+
+        <button type="submit">Register</button>
+
+    </form>
 </div>
 
-<button type="submit">Submit</button>
-
-</form>
+<footer>
+    &copy; 2026 National Library Service of Barbados. All Rights Reserved.
+</footer>
 
 <script src="script.js"></script>
 
