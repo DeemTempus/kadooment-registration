@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Junior Kadooment Registration</title>
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<form id="form">
+
+<h3>General Info</h3>
+<input id="firstName" placeholder="First Name" required>
+<input id="lastName" placeholder="Last Name" required>
+
+<select id="gender" required>
+    <option value="">Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select>
+
+<input id="address" placeholder="Address" required>
+<input id="contact" placeholder="Contact Number" required>
+<input id="parent" placeholder="Parent Name" required>
+
+<h3>Section</h3>
+<select id="section" required></select>
+
+<div id="measurements" class="hidden">
+    <h3>Measurements</h3>
+    <input id="chest" placeholder="Chest">
+    <input id="waist" placeholder="Waist">
+    <input id="height" placeholder="Height">
+
+    <div id="maleFields" class="hidden">
+        <input id="pants" placeholder="Pants Size">
+    </div>
+
+    <div id="femaleFields" class="hidden">
+        <input id="skirt" placeholder="Skirt Size">
+    </div>
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script src="script.js"></script>
+
+</body>
+</html>
