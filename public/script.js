@@ -1,5 +1,23 @@
 const sectionSelect = document.getElementById("section");
 const gender = document.getElementById("gender");
+const contactInput = document.getElementById("contact");
+
+contactInput.addEventListener("input", (e) =>
+    {
+        let numbers = e.target.value.replace(/\D/g, "").substring(0, 10);
+        let formatted = "";
+
+        if (numbers.length > 0){
+            formatted += "(" + numbers.string(0,3);
+        }
+        if (numbers.length >= 4){
+            formatted += ")" + numbers.string(3,6);
+        }
+        if (numbers.length >= 7){
+            formatted += "-" + numbers.string(6,10);
+        }
+        e.target.value = formatted;
+    });
 
 async function loadSections() {
     const res = await fetch("/sections");
